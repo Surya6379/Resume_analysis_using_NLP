@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <link  rel="stylesheet" href="css\style.css">
+    </head>
+    <body>
+        <img class="wave" src="static/img/wave1.jpeg">
+        <div class="container">
+          <div class="img">
+            <img src="static/img/bg.svg">
+          </div>
+          <div class="login-content">
+      
+        
+             <img src="static/img/avatar.svg">
+			<h3 class="title">Hi {{user_name}}</h3>
+            <br>
+            <h4 class="title">Please upload your resume!</h4>
+            <br> 
+            <div class="input-div one">
+                <table border = 1>
+                    {% for key, value in output.items() %} 
+                        <tr>
+                            <th> {{ key }} </th>
+                            <td> {{ value }} </td>
+                        </tr>
+
+                    {% endfor %} 
+                </table>
+            </div>
+            <!-- <button style="text-align: center;" id="upload_button" type="submit" >Upload</button> -->
+            <form action = "" method = "POST" 
+                enctype = "multipart/form-data">
+                <input type = "file" name = "file" />
+                <input type = "submit"/>
+            </form>
+       
+        </div>
+        </div>
+        <!-- <script type="text/javascript" src="index.js"></script> -->
+    </body>
+</html>

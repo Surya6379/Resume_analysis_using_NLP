@@ -1,0 +1,52 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+</head>
+<body>
+          
+      
+    
+            
+
+            {% for i in emps%}
+
+                <h3>{{i}}</h3>
+                <table border = 1>
+                <tr>
+                {% for key, value in emps[i][0].items() %}
+                
+                    <th> {{ key }} </th>
+                                        
+                {% endfor %}
+                </tr>
+            <tr>
+            {% for emp in emps[i]%}
+                {% for j in emp%}
+                    <td>
+                        {{emp[j]}}
+                    </td>
+                {% endfor %}
+            
+                        <form action="" method="POST">
+                            <td> <button  type="submit" 
+                                name = "submit_button" value="{{ emp['email'] }}"  >
+                                Select</button>
+                            </td>
+                        
+                        </form>
+            </tr>
+            {% endfor %}
+            <br>
+            
+         </table>
+
+            {% endfor %}
+            
+                
+</body>
+</html>

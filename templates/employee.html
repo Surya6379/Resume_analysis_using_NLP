@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <link  rel="stylesheet" href="css\style.css">
+    </head>
+    <body>
+        <img class="wave" src="static/img/wave1.jpeg">
+        <div class="container">
+          <div class="img">
+            <img src="static/img/loginbg.svg">
+          </div>
+          <div class="login-content">
+        <form action="" method="POST">
+           
+            {% if recom_jobs %}
+            <h3>Recommended jobs</h3>
+            {% endif %}
+            <table boder = 1>
+                {% for jobs in recom_jobs %} 
+                    <tr>
+                        <button type="submit" name = "submit_button" value="{{ jobs }}" 
+                        class="btn btn-primary">{{ jobs }}</button> 
+                    </tr>
+
+                {% endfor %} 
+            </table>
+<div >
+            <table>
+                <tr>
+            <td> <button  type="submit" 
+                name = "submit_button" value="upload_resume" class="button1" >
+                Upload resume</button>
+            </td>
+            <td> <button  type="submit" 
+                name = "submit_button" value="apply_job"  class="button1" >
+                Apply  job</button>
+            </td>
+        </tr>
+        </table>
+    </div>
+        </form>   
+        </div>
+        </div>  
+    </body>
+</html>
